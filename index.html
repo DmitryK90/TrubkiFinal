@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Trubki.css">
+    <title>Расчёт трубок</title>
+</head>
+<body>
+    <div class="page">
+        <div class="menu" id="menu">
+            <div class="block_add" id="block_add">
+                  <button type="button" id="btnAdd" class="btnBigAdd">Добавить</button>
+            </div>
+        </div>
+        <hr class="hr">
+        <div class="choice_L">
+            <div class="selOne">
+                <select class="leng" id="leng" name="leng">
+                    <option value="0">- Длина провода -</option>
+                    <option value="2.0">До 3 метров</option>
+                    <option value="2.2">От 3 до 10 метров</option>
+                    <option value="2.4">От 10 метров</option>
+                </select>
+                <img src="images/treug1.png" alt="" class="img1">
+            </div>
+            <div class="selTwo">
+                <select class="leng1" id="choiceTube" name="leng">
+                    <option value="0">- Тип трубки -</option>
+                    <option value="ТВ-40">305ТВ-40</option>
+                    <option value="ТВ-40Т">305ТВ-40Т</option>
+                    <option value="ТВ-40А">305ТВ-40А</option>
+                    <option value="ТВ-50">305ТВ-50</option>
+                    <option value="ТВ-50-14">305ТВ-50-14</option>
+                    <option value="ТВ-60">305ТВ-60</option>
+                    <option value="Deray IAKT 3:1">Deray IAKT 3:1</option>
+                    <option value="Deray IAKT 4:1">Deray IAKT 4:1</option>
+                    <option value="Deray HB">Deray HB</option>
+                </select>
+                <img src="images/treug1.png" alt="" class="img1">
+                <button class="btn_info" title="Помощь в выборе трубки.">?</button>
+            </div>
+        </div>
+        <button class="btnCalc" id="btnCalc">Рассчитать</button>
+        <div>
+            <p class="out" id="out"></p>
+        </div>
+    </div>
+    <div class="myModal" id="myModal">
+        <div class="modal_box">
+            <h1 class="h1Main">Основные виды трубок</h1>
+            <a class='btnModalClose'>&#10006</a>
+            <div class="blockWrap">
+                <div class="block1">
+                    <h3 style='text-align: center; margin-bottom: 5px; font-size: 20px;'>ПВХ</h3>
+                    <hr class="hr">
+                    <h3 style='text-align: center; margin-bottom: 5px;'>Тип 305 (ГОСТ19034-82).</h3>
+                    <p>Предназначены для защиты и доп. изоляции токоведущих элементов, работающих при напряжении до 1000В постоянного и переменного тока частотой до 50Гц.</p>
+                    <table class='table-trub'>
+                        <tr>
+                           <th>Марка трубки</th>
+                           <th>Рабочая <br>tº</th>
+                           <th>Особенности</th>
+                        </tr>
+                        <tr>
+                           <td>305ТВ-40</td>
+                           <td>-40...+70</td>
+                           <td>Более жесткая</td>
+                        </tr>
+                        <tr>
+                           <td>305ТВ-40А</td>
+                           <td>-40...+105</td>
+                           <td>Пов.термостойкость</td>
+                        </tr>
+                        <tr>
+                           <td>305ТВ-40Т</td>
+                           <td>-40...+70</td>
+                           <td>Тропикоустойчивая</td>
+                        </tr>
+                        <tr>
+                           <td>305ТВ-50</td>
+                           <td>-50...+70</td>
+                           <td>Более мягкая</td>
+                        </tr>
+                        <tr>
+                           <td>305ТВ-50-14</td>
+                           <td>-50...+70</td>
+                           <td>Улучш.изоляц.св-ва.</td>
+                        </tr>
+                        <tr>
+                           <td>305ТВ-60</td>
+                           <td>-60...+70</td>
+                           <td>Морозоуст.</td>
+                        </tr>
+                    </table>
+                    <div class="ModalFooter">
+                        <p><b>Цвет:<br></b>ТВ-40, ТВ-40Т, ТВ-50-14, ТВ-60: Белый, черный, серый, коричневый, красный, розовый, оранжевый, желтый, зеленый, светло-синий, голубой, фиолетовый.<br>ТВ-40А: черный, серый, коричневый, розовый, бордо, оранжевый, зеленый, синий.<br>ТВ-50: черный.</p>
+                        <p><b>Диаметр:</b> 0.50, 0.75, 1.00, 1.50, 1.75, 2.00, 2.50, 3.00, 3.50, 4.00, 4.50, 5.00,<br> 6.00, 7.00, 8.00, 9.00, 10.00, 12.00, 14.00, 16.00, 18.00, 20.00, 22.00, 25.00, 30.00, 35.00, 40.00, 50.00.</p>
+                    </div>
+                </div>
+                <div class="block2">
+                    <h3 style='text-align: center; margin-bottom: 5px; font-size: 20px;'>Термоусадочная</h3>
+                    <hr class="hr">
+                    <div class="deray_flex">
+                        <div class='deray_1'>
+                          <h3>"Deray-IAKT" серия<br>(клеевая)</h3>
+                          <table class='table_IAKT'>
+                             <tr>
+                                <th>Наим.(Усадка 3:1)</th>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-3,0*/1,0**</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-4,5/1,5</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-6,0/2,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-9,0/3,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-12,0/4,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-19,0/6,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-24,0/8,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-40,0/13,0</td>
+                             </tr>
+                          </table>
+                          <table class='table_IAKT'>
+                             <tr>
+                                <th>Наим.(Усадка 4:1)</th>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-4,0*/1,0**</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-8,0/2,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-12,0/3,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-16,0/4,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-24,0/6,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-IAKT-32,0/8,0</td>
+                             </tr>
+                          </table>
+                          <p><b>Цвет:</b> Белый, черный.</p>
+                        </div>
+                        <div class='deray_2'>
+                          <h3>"Deray-HB" серия<br>(без клеевая)</h3>
+                          <table class='table_HB'>
+                             <tr>
+                                <th>Наим.</th>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-1,2*/0,6**</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-1,6/0,8</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-2,4/1,2</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-3,2/1,6</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-4,0/1,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-4,8/2,4</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-6,4/3,2</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-8,0/2,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-9,5/4,8</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-12,7/6,4</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-19,0/9,5</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-25,4/12,7</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-31,8/15,9</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-38,1/19,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-50,8/25,4</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-76,0/38,0</td>
+                             </tr>
+                             <tr>
+                                <td>Deray-HB-102,0/51,0</td>
+                             </tr>
+                          </table>
+                          <p class='p_HB'><b>Цвет:</b> Прозрачный, черный.<br><span>(на заказ: белый, желт.,зел.,кр.,син.)</span></p>
+                       </div>
+                    </div>
+                    <div class='div2_opis'>
+                      <p>*-&#8960 до усадки.**-&#8960 после усадки.</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal_alert_black" id="modal_alert_black">
+        <div class="modal_alert">
+            <a class='btnModalCloseAlert'>&#10006</a>
+            <div class="modal_alert_text">
+                <p class="par_modal_warning1 pmw"></p>
+                <p class="par_modal_warning2 pmw"></p>
+                <p class="par_modal_warning3 pmw"></p>
+            </div>
+        </div>
+    </div>
+    <script src="Trubki.js"></script>
+</body>
+</html>
